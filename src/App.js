@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+function Square({value}){
+  // function Handleclick () {
+  //   console.log("X");
+  // }
 
-export default App;
+  return (
+  <button className="square">{value}</button>);
+};
+
+
+export default function board(){
+  return (
+    <>
+    <div className="board-row">
+    <Square onClick={Handleclick}/>
+    <Square/>
+    <Square/>
+    </div>
+    <div className="board-row">
+    <Square/>
+    <Square/>
+    <Square/>
+    </div>
+    <div className="board-row">
+    <Square/>
+    <Square/>
+    <Square/>
+    </div>
+    </>
+  );
+};
