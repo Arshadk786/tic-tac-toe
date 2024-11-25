@@ -1,14 +1,34 @@
-body {
+:root {
+  --background-color: #000000; /* Black */
+  --board-border-color: #00ffff; /* Electric Blue */
+  --x-color: #39ff14; /* Neon Green */
+  --o-color: #ff00ff; /* Neon Pink */
+  --square-background: #1a1a1a; /* Dark Gray */
+  --square-hover: #333333; /* Slightly lighter gray */
+  --text-color: #ffffff; /* White */
+  --title-color: #00ffff; /* Electric Blue */
+}
+
+
+/* body {
+  height: 100%;
+  width: 100%;
   display: flexbox;
-  align-items: center;
+  align-content: center;
   justify-items: center;
-  margin: 0;
-  padding: 0;
+  background-color: #f2f2f2;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.title{
+  text-align: center;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 code {
@@ -17,10 +37,81 @@ code {
 }
 
 .square{
-  padding: 50px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 1px solid #333333;
+  font-size: 40px;
+  font-weight: 600;
+  background-color: #ffffff;
 }
 
+
 .board-row{
-  margin: 0;
-  padding: 0
+  display: flex;
+  border: 1px solid #333333;
+}
+
+.status{
+  text-align: center;
+} */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 2em;
+}
+
+.status {
+  color: var(--text-color);
+  text-align: center;
+  margin: 10px 0;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: var(--square-background);
+  border: 2px solid var(--board-border-color);
+  color: var(--text-color);
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.square:hover {
+  background: var(--square-hover);
+  box-shadow: 0 0 10px var(--board-border-color);
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.xo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.xo.x {
+  color: var(--x-color); /* Neon Green */
+}
+
+.xo.o {
+  color: var(--o-color); /* Neon Pink */
+}
+
+/* Add some hover effect for fun */
+.xo:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
 }
